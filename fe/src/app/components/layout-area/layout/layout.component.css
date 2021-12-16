@@ -1,0 +1,18 @@
+div {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 15% 80% 5%;
+}
+
+header, footer {
+    grid-column: span 6;
+}
+
+header {
+    background-color: rgb(247, 247, 177);
+}
+
+main {
+    grid-column: span 6;
+}

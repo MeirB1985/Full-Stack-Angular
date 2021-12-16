@@ -1,0 +1,37 @@
+.products {
+    text-align: center;
+    height: 100%;
+    padding: 5px;
+    background-color: rgb(245, 216, 232);
+    align-items: center;
+    justify-content: center;
+}
+
+.links {
+    height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.main {
+    height: 100%;
+    background-color: rgb(245, 216, 232);
+  }
+
+a {
+    position: relative;
+    text-align: center;
+    left: 20px;
+    margin-right: 10px;
+}
+
+.search {
+    display: inline-block;
+    text-align: left;
+}
+
+.cart {
+    padding: 20px;
+    width: 45%;
+    background-color: rgb(205, 220, 247);
+}

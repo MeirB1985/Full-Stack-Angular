@@ -1,0 +1,61 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" #right position="start">
+        <div class="adminPage">
+            <h3>
+                <mat-icon>message</mat-icon>
+                Edit product
+            </h3>
+            <form (submit)="edit()" [formGroup]="productForm">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Name: </mat-label>
+                    <input matInput type="text" [formControl]="nameControl">
+                    <mat-error *ngIf="nameControl.errors?.required && nameControl.touched">Missing name.</mat-error>
+                    <mat-error *ngIf="nameControl.errors?.pattern && nameControl.touched">Name must start with a capital letter.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Price: </mat-label>
+                    <input matInput type="number" [formControl]="priceControl">
+                    <mat-error *ngIf="priceControl.invalid && priceControl.touched">Missing price.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">    
+                    <mat-label>Category: </mat-label>
+                    <mat-select  [formControl]="categoryControl">
+                        <mat-option *ngFor="let category of categories" value="{{category._id}}">{{category.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Image: </mat-label>
+                    <input matInput/>
+                    <input type="file" [formControl]="imageControl" (change)="saveImage($event)">
+                </mat-form-field>
+
+                <button mat-stroked-button [disabled]="productForm.invalid">
+                    <mat-icon>send</mat-icon>
+                    Update
+                </button>
+
+            </form>
+        </div>
+    </mat-drawer>
+    <mat-drawer #drawer2 class="example-sidenav2" mode="side" #left position="end">
+        <app-add-product></app-add-product>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <div class="products">
+            <div class="links">
+                <button type="button" mat-stroked-button (click)="drawer.toggle()">Edit Product</button>
+                <button type="button" mat-stroked-button (click)="drawer2.toggle()">Add Product</button>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <app-please-wait *ngIf="!products"></app-please-wait>
+            <app-product-card *ngFor="let p of products" [product]="p" (click)="getThisProduct(p)"></app-product-card>
+        </div>
+    </div>
+
+</mat-drawer-container>

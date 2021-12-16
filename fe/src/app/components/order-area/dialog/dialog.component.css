@@ -1,0 +1,9 @@
+.main {
+    display: inline-block;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(125, 171, 255);
+}

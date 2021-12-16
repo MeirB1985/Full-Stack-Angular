@@ -1,0 +1,21 @@
+form, mat-form-field {
+    width: 300px;
+}
+
+.mat-hint {
+    color: red;
+}
+
+button {
+    width: 50%;
+    text-align: center;
+}
+
+div {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+h3 {
+    text-align: center;
+}

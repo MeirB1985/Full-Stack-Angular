@@ -1,0 +1,45 @@
+<div class="main">
+    <div class="receipt">
+        <app-receipt></app-receipt>
+    </div>
+    <div class="order">
+        <h3>My Order</h3>
+        <hr/>
+        <form #myForm="ngForm" (submit)="makeOrder()">
+            <span>Shipping Details</span>
+            <mat-form-field appearance="fill">
+                <mat-label>City: </mat-label>
+                <input matInput #cityBox="ngModel" type="text" name="city" [(ngModel)]="order.city" required (dblclick)="getUsersCity()">
+                <mat-error *ngIf="cityBox.errors?.required && cityBox.touched">Missing city.</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Street: </mat-label>
+                <input matInput #stBox="ngModel" type="text" name="st" [(ngModel)]="order.st" required (dblclick)="getUsersSt()"/>
+                <mat-error *ngIf="stBox.errors?.required && stBox.touched">Missing street.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Shipping Date: </mat-label>
+                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" #shippingDateBox="ngModel" [min]="today" name="shippingDate" [(ngModel)]="order.shippingDate" required/>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="shippingDateBox.errors?.required && shippingDateBox.touched">Missing shipping date.</mat-error>
+            </mat-form-field>
+
+            <span>Payment</span>
+            <mat-form-field appearance="fill">
+                <mat-label>Credit Card: </mat-label>
+                <input matInput #creditCardBox="ngModel" type="number" name="creditCard" [(ngModel)]="creditCard" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"/>
+                <mat-error *ngIf="creditCardBox.errors?.required && creditCardBox.touched">Missing credit card number.</mat-error>
+                <mat-error *ngIf="creditCardBox.errors?.pattern && creditCardBox.touched">This is not a valid credit card</mat-error>
+            </mat-form-field>
+
+            <button mat-stroked-button [disabled]="myForm.form.invalid">
+                <mat-icon>send</mat-icon>
+                Order
+            </button>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+.products {
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(245, 216, 232);
+}
+
+.links {
+    height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+a {
+    position: relative;
+    text-align: center;
+    left: 20px;
+    margin-right: 10px;
+}
+
+span {
+	width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: left;
+    align-items: center;
+    padding: 0 10px;
+    margin: 10px;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+.search {
+    display: inline-block;
+    text-align: left;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(245, 216, 232);
+}
+
+.example-sidenav-content {
+    float: right;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 216, 232);
+}
+
+.example-sidenav {
+    padding: 20px;
+    background-color: rgb(205, 220, 247);
+}
+
+.cart {
+    padding: 20px;
+    width: 45%;
+    background-color: rgb(205, 220, 247);
+}

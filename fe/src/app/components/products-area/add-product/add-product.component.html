@@ -1,0 +1,43 @@
+<div>
+
+    <h3>
+        <mat-icon>message</mat-icon>
+        Add Product
+    </h3>
+
+    <form #myForm="ngForm" (submit)="send()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name: </mat-label>
+            <input matInput #nameBox="ngModel" type="text" [(ngModel)]="product.name" name="name" required pattern="^[A-Z].*$">
+            <mat-error *ngIf="nameBox.errors?.required && nameBox.touched">Missing name.</mat-error>
+            <mat-error *ngIf="nameBox.errors?.pattern && nameBox.touched">Name must start with a capital letter.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Price: </mat-label>
+            <input matInput #priceBox="ngModel" type="number" step="1" [(ngModel)]="product.price" name="price" required>
+            <mat-error *ngIf="priceBox.invalid && priceBox.touched">Missing price.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Category: </mat-label>
+            <mat-select #categoryBox="ngModel" [(ngModel)]="product.categoryToSend" name="category" required>
+                <mat-option *ngFor="let category of categories" value="{{category._id}}">{{category.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Image:*</mat-label>
+            <input matInput/>
+            <input type="file" accept="image/*" (change)="saveImage($event)" (blur)="imageBlur()" required/>
+            <mat-error *ngIf="imageVisited && !product.image">Missing image.</mat-error>
+        </mat-form-field>  
+        
+        <button mat-stroked-button [disabled]="myForm.form.invalid || !product.image">
+            <mat-icon>add</mat-icon>
+            Add
+        </button>
+    </form>
+
+</div>

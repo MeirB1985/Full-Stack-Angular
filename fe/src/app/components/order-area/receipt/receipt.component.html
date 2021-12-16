@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="receipt">
+        <h3>My receipt</h3>
+        <label>Search on receipt: </label>
+        <input type="text" (keyup)="search(search1.value)" #search1/>
+        <hr/>
+        <app-item-card mat-raised-button *ngFor="let i of items" [item]="i" [result]="result"></app-item-card>
+        <p class="red">NO CHANGES PERMITTED HERE!</p>
+    </div>
+    <div class="buttom">
+        <p class="price">Total: {{totalPrice}}</p>
+        <a mat-stroked-button routerLink="/products">Back to Shop</a>
+    </div>
+</div>

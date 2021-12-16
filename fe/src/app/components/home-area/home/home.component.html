@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="login">
+        <app-login></app-login>
+    </div>
+    <div class="center">
+        <h3>Why should you buy in our store?</h3>
+        <h3>Best price! Best service!</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlTxho4ctAuGF119v5lR4Qe1Xfj7l13gg7Cw&usqp=CAU"/>
+    </div>
+    <div class="home">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dDKtuHUE7xlhlA9fjmVYt9K43CmXuo67NA&usqp=CAU"/>
+        <br/>
+        <app-inventory></app-inventory>
+
+        <ng-container *ngIf="!user">
+            <h4>Welcome to our website</h4>
+        </ng-container>
+        <ng-container *ngIf="user && user.admin===false">
+            <h3>Notifications:</h3>
+            <h3 >Hello {{user.firstName}} {{user.lastName}}</h3>
+            <h4 *ngIf="!carts">Welcome to your first shopping</h4>
+            <h4 *ngIf="carts && lastCartId !== lastOrderCartId">You have open cart from {{openCartDate}}</h4>
+            <h4 *ngIf="carts && lastCartId !== lastOrderCartId">Total price {{totalPrice | currency:"ILS"}}</h4>
+            <h4 *ngIf="carts && lastCartId === lastOrderCartId">Your last order was on {{lastOrderDate}}</h4>
+        </ng-container>
+    </div>
+</div>

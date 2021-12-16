@@ -1,0 +1,7 @@
+1) order-date-filter out from datepicker-getTime() is not a function    
+
+2) recepit-Error: ENOENT: no such file or directory
+
+3) item service-update store cousing problems
+
+?) fix recepit-pdf kit

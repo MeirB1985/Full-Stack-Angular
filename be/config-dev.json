@@ -1,0 +1,12 @@
+{
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "name": "Northwind"
+    },
+    "jwtKey": "SuchAPerfectDay",
+    "database": {
+        "connectionString": "mongodb://localhost:27017/ShopOnline"
+    }
+}

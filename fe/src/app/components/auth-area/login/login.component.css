@@ -1,0 +1,22 @@
+form, mat-form-field {
+    width: 300px;
+    display: inline-block;
+}
+
+.mat-hint {
+    color: red;
+}
+
+.mat-raised-button {
+    width: 200px;
+}
+
+button {
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h3 {
+    text-align: center;
+}

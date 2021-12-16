@@ -1,0 +1,10 @@
+Order ID:
+61b10b30ca0129561e804013  Order UserID:
+617e45e0f61ed66e25e06892  Order CartID:
+618cd0220a5ed35f1adbf788  Order price:
+200  Order user city:
+harish   Order user st:
+histadroot 4  Order shipping date:
+2021-12-20  Order date:
+Sun Nov 14 2021 13:11:31 GMT+0200 (שעון ישראל (חורף))  Order card number:
+8080

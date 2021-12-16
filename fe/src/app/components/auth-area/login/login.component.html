@@ -1,0 +1,49 @@
+<div>
+    <h2>
+        <mat-icon>message</mat-icon>
+        Login
+    </h2>
+    <form (submit)="login()">
+        <mat-form-field appearance="fill">
+        <mat-label>Email: </mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="credentials.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+        <mat-label>Password: </mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="credentials.password">
+        </mat-form-field>
+
+        <button mat-stroked-button>
+            <mat-icon>send</mat-icon>
+            Login
+        </button>
+
+        <button mat-stroked-button routerLink="/register" routerLinkActive="active">
+            <mat-icon>send</mat-icon>
+            Register
+        </button>
+    </form>
+    <ng-container *ngIf="user">
+        <ng-container *ngIf="user.admin===false">
+            <ng-container *ngIf="!carts || carts && lastCartId === lastOrderCartId">
+                <button mat-raised-button (click)="createNewCart()" routerLinkActive="active">
+                    <mat-icon>send</mat-icon>
+                    Start shopping
+                </button>
+            </ng-container>
+            <ng-container *ngIf="carts && lastCartId !== lastOrderCartId">
+                <button mat-raised-button style="width:200px" routerLink="/products" routerLinkActive="active">
+                    <mat-icon>send</mat-icon>
+                    Resume shoppoing
+                </button>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="user.admin===true">
+            <button mat-raised-button routerLink="/admin" routerLinkActive="active">
+                <mat-icon>send</mat-icon>
+                Admin page
+            </button>
+        </ng-container>
+    </ng-container>
+</div>

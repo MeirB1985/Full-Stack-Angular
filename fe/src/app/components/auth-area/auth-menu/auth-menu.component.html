@@ -1,0 +1,15 @@
+<div>
+
+    <ng-container *ngIf="!user">
+        <span>Hello and welcome to our website</span>
+    </ng-container>
+
+    <ng-container *ngIf="user">
+        <span>Hello {{user.firstName}} {{user.lastName}}</span>
+        <span> | </span>
+        <a mat-stroked-button routerLink="/logout" routerLinkActive="active">Logout</a>
+        <br/>
+        <span>{{user.email}}</span>
+    </ng-container>
+
+</div>

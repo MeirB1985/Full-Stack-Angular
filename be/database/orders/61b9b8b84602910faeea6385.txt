@@ -1,0 +1,10 @@
+Order ID:
+61b9b8b84602910faeea6385  Order UserID:
+617e45e0f61ed66e25e06892  Order CartID:
+61b5a8b1c309e3ae9d9aff30  Order price:
+3  Order user city:
+harish  Order user st:
+Tnufa 8B, Apt. 25  Order shipping date:
+16.12.2021, 0:00:00  Order date:
+15.12.2021  Order card number:
+undefined

@@ -1,0 +1,32 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin: 10px;
+}
+
+.imageDiv {
+    float: left;
+    width:20%;
+}
+
+.detailsDiv {
+    float: center;
+}
+
+button {
+    float: right;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+.mat-icon {
+    height: 20px;
+}
+
+.highLight {
+    background-color: rgb(250, 245, 114);
+}

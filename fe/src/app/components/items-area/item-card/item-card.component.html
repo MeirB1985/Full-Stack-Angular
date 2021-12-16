@@ -1,0 +1,13 @@
+<div class="main">
+    <div mat-raised-button class="imageDiv">
+    <img [src]="imageUrl + item.products[0].imageName"/>
+    </div>
+    <div mat-raised-button class="detailsDiv">
+        Name: <span *ngIf="highLight" class="highLight">{{item.products[0].name}}</span>
+              <span *ngIf="!highLight">{{item.products[0].name}}</span>
+              , Quantity: {{item.quantity}}, Price: {{item.price}}
+    </div>
+    <button *ngIf="isCartPage" mat-button (click)="deleteItem()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>

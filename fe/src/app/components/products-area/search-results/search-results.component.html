@@ -1,0 +1,26 @@
+<mat-drawer-container class="main" autosize>
+    <mat-drawer #drawer class="cart" mode="side" #right position="start">
+        <app-my-cart></app-my-cart>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <div class="products">
+            <div class="search">
+                <label>Search: </label>
+                <input type="text" [(ngModel)]="searchedKeyword"/>
+                <button mat-stroked-button (click)="secondSearch()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+            <br/>
+            <div class="links">
+                <button type="button" mat-stroked-button (click)="drawer.toggle()">My Cart</button>
+                <a mat-stroked-button routerLink="/products">All Products</a>
+                <a *ngFor="let category of categories" mat-stroked-button routerLink="/products/category/{{category._id}}">{{category.name}}</a>
+            </div>
+            <br/>
+            <hr/>
+            <app-please-wait *ngIf="!products"></app-please-wait>
+            <app-product-card *ngFor="let p of filteredArray" [product]="p" ></app-product-card>
+        </div>
+    </div>
+</mat-drawer-container>

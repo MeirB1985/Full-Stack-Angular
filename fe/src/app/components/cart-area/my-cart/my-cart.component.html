@@ -1,0 +1,13 @@
+<div class="main">
+    <div class="items">
+        <h3>My Cart</h3>
+        <hr/>
+        <app-item-card mat-raised-button *ngFor="let i of items" [item]="i"></app-item-card>
+    </div>
+    <br/>
+    <div class="buttom">
+        <p>Total: {{totalPrice}}</p>
+        <button mat-button (click)="makeOrder()" [disabled]="isEmpty()">Make an order</button>
+        <button mat-button (click)="deleteAll()">Delete All</button>
+    </div>
+</div>
